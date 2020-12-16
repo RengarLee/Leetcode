@@ -40,6 +40,6 @@ int UniquePaths(int m, int n)
 
 int main()
 {
-    printf("%d\n", UniquePath(2,3));
+    printf("%d\n", UniquePaths(2,3));
     return 0;
 }
