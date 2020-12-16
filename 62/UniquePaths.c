@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// int UniquePath(int m, int n)
+// int UniquePaths(int m, int n)
 // {
 //     int path[m][n];
 //     for (int i = 0; i < m; i++)
@@ -21,7 +21,7 @@
 //     return path[m-1][n-1];    
 // }
 
-int UniquePath(int m, int n)
+int UniquePaths(int m, int n)
 {
     int path[n];
     for (int i = 0; i < n; i++)
