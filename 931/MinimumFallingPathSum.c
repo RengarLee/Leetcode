@@ -69,9 +69,6 @@ int MinTow(int a, int b)
 //     return min;
 // }
 
-
-// int minFallingPathSum(int **A, int ASize, int *AColSize)
-
 int minFallingPathSum(int **A, int ASize, int *AColSize)
 {
     int n = ASize;
