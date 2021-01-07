@@ -4,7 +4,7 @@
 
 bool stoneGame(int* piles, int pilesSize){
     int A = 0, L = 0, i = 0, j = pilesSize-1;
-
+    int Atemp = 0, Ltemp = 0;
     int temp = 0;
     if(pilesSize <=2)
     {
@@ -14,9 +14,14 @@ bool stoneGame(int* piles, int pilesSize){
     {
         if(piles[i]+piles[j-1]>piles[j]+piles[i+1])
         {
+            Atemp = piles[j-1];
+            Ltemp = piles[j];
             temp = piles[i++];
+            
         }else
         {
+            Atemp = piles[i+1];
+            Ltemp = piles[i];
             temp = piles[j--];
         }
         if(t%2 == 0)
@@ -27,7 +32,7 @@ bool stoneGame(int* piles, int pilesSize){
             L += temp;
         }
     }
-    return A>L;
+    return (A+Atemp)>(L+Ltemp);
 }
 
 
