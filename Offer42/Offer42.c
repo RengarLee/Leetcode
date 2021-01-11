@@ -1,39 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-int maxSubArray(int* nums, int numsSize){
-    int sum = nums[0];
-    int fsum = 0;
+int maxSubArray(int *nums, int numsSize)
+{
+    int *pathSum = (int *)malloc(sizeof(int) * numsSize);
+    pathSum[0] = nums[0];
+    int maxNum = nums[0];
     for (int i = 1; i < numsSize; i++)
     {
-        if(nums[i]>sum)
+        if (pathSum[i-1] >= 0)
         {
-            sum = nums[i];
-        }else
+            pathSum[i] = pathSum[i - 1] + nums[i];
+        }
+        else
         {
-            if(nums[i]<=0)
-            {
-                fsum += nums[i];
-                continue;
-            }
-            if(nums[i]+fsum>=0)
-            {
-                sum += nums[i]+fsum;
-                fsum = 0;
-                continue;
-            }else
-            {
-                fsum += nums[i];
-            }
+            pathSum[i] = nums[i];
+        }
+        if (pathSum[i] > maxNum)
+        {
+            maxNum = pathSum[i];
         }
     }
-    return sum;
+
+    return maxNum;
 }
 
 int main()
 {
-    int array[9] = {-2,1,-3,4,-1,2,1,-5,4};
+    int array[9] = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
     int col = 9;
     printf("%d\n", maxSubArray(array, col));
     return 0;
