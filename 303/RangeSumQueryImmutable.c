@@ -9,6 +9,10 @@ typedef struct
 
 NumArray *numArrayCreate(int *nums, int numsSize)
 {
+    if(numsSize == 0)
+    {
+        return NULL;
+    }
     NumArray *numArray = (NumArray *)malloc(sizeof(NumArray) * numsSize);
     numArray[0].sum = nums[0];
     numArray[0].value = nums[0];
