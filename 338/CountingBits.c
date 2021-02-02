@@ -5,7 +5,14 @@
  * Note: The returned array must be malloced, assume caller calls free().
  */
 int* countBits(int num, int* returnSize){
-    int* Bits = (int*) malloc(num*sizeof(int))
+    int* Bits = (int*) malloc(*returnSize*sizeof(int));
+    Bits[0] = 0;
+    Bits[1] = 1;
+    while (Bits[])
+    {
+        /* code */
+    }
+    
 }
 int main()
 {
